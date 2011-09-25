@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Node Playground :: Live Chat</title>
+		<link rel="stylesheet" href="/assets/style/playground.css" type="text/css" media="screen" charset="utf-8">
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="swinger"></div>
+			{{- body }}
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/assets/js/jquery.form.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/assets/js/jquery.simplemodal.1.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/chat/nowjs/now.js"></script>
+		{{- scripts.get() }}
+	</body>
+</html>
