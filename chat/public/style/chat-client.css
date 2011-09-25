@@ -1,0 +1,63 @@
+
+div#chat-container {
+	position: relative;
+	height: 60%;
+	border: 1px solid #444;
+}
+
+div#messages {
+	height: 100%;
+	overflow-y: scroll;
+	margin-right: 150px;
+	position: relative;
+}
+
+div#participants {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
+	width: 150px;
+	overflow-y: scroll;
+}
+
+div#entry-zone {
+	
+}
+
+.message,.chatter {
+	padding: 4px 6px;
+}
+
+.message.system {
+	background-color: #eff;
+	font-style: italic;
+}
+
+
+#text-input {
+	border: 1px solid #444;
+	padding: 6px;
+	width: 788px;
+	font-family: "Myriad Web Pro", Calibri, Tahoma, Arial, sans-serif;
+	font-size: 13pt;
+}
+
+html,body,div#wrapper {
+	height: 100%;
+}
+
+#signin {
+	display: none;
+}
+
+#username {
+	border: 1px solid #444;
+	padding: 6px;
+	font-family: "Myriad Web Pro", Calibri, Tahoma, Arial, sans-serif;
+	font-size: 13pt;
+}
+
+label {
+	display: block;
+}

@@ -14,7 +14,7 @@ a {
 }
 
 img#masthead {
-	margin: 0 auto 10px;
+	margin: 0 auto 25px;
 }
 
 div#wrapper {
@@ -47,12 +47,42 @@ p,ul,ol {
 	width: 800px;
 	text-align: left;
 	margin: 15px auto;
-	font-size: 14pt;
+	font-size: 13pt;
 }
 
-div.highlight {
+div.header-highlight,div.highlight {
+	padding: 5px 0;
+	margin: 5px 0;
+}
+
+div.header-highlight {
 	border-top: 1px solid #09c;
 	border-bottom: 1px solid #09c;
 	background-color: #E5F8FF;
-	padding: 5px 0;
+}
+
+div.highlight {
+	border-top: 1px solid #444;
+	border-bottom: 1px solid #444;
+	background-color: #eee;
+}
+
+/* SIMPLEMODAL */
+
+.simplemodal-overlay {
+	background-color: #fff;
+	opacity: 0.4;
+}
+
+.simplemodal-container {
+	background-color: #444;
+	color: #fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 12px;
+	text-align: left;
+}
+
+.simplemodal-wrap {
 }

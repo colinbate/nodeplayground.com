@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+var fs = require('fs'),
+    exec = require('child_process').exec;
+
+var readme = __dirname + '/README.md';
+var index = __dirname + '/site/index.html';
+var tpl = __dirname + '/tpl/main.tpl';
+var mmd = exec('multimarkdown ' + readme, function (err, stdout, stderr) {
+	if (err) {
+		console.log(err);
+		return;
+	}
+	var template = fs.readFileSync(tpl, 'utf8');
+	var rendered = template.replace('{{CONTENT}}', stdout);
+	fs.writeFile(index, rendered, function (err) {
+		if (err) {
+			throw err;
+		}
+		console.log('README merged into ' + index);
+	});
+});
+

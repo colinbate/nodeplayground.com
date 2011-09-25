@@ -1,7 +1,14 @@
 <h1>Live Chat</h1>
-
-<div id="messages"></div>
-<input type="text" id="text-input">
-<input type="button" value="Send" id="send-button">
-
-{{ scripts.set('<script src="/assets/js/chat-client.js" type="text/javascript" charset="utf-8"></script>'); }}
+<div id="chat-container">
+	<div id="messages"></div>
+	<div id="participants"></div>
+</div>
+<div id="entry-zone">
+	<input type="text" id="text-input">
+</div>
+<div id="signin">
+	<label for="username">Enter a username:</label>
+	<input type="text" id="username" name="username">
+</div>
+{{ scripts.set('<script src="/chat/js/chat-client.js" type="text/javascript" charset="utf-8"></script>'); }}
+{{ styles.set('<link rel="stylesheet" href="/chat/style/chat-client.css" type="text/css">'); }}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>Node Playground</title>
@@ -8,16 +8,51 @@
 	<body>
 		<img src="/assets/img/node-playground.png" alt="Node Playground" id="masthead">
 		<div id="content">
-			<div class="highlight">
-			<h1>Experiments in Node.</h1>
-			</div>
-			<p>
-				Here I will list and outline the various hacks I try with node.js.
-				Before I even get started with the stuff on this site, I have other external sites that I'm running which are Node fuelled.
-			</p>
-			<ul>
-				<li><a href="http://colin.is">Colin.is</a> &mdash; a personal biography site with content in CouchDB and inline editing.</li>
-			</ul>
+			<h1 id="experimentsinnode">Experiments in Node</h1>
+
+<p>Node Playground is just that, it is a collection of node applications lumped into one place which allows me to experiment with different modules and techniques in a fairly consistent and convenient way. You could call it a sandbox as well I guess, but really, the sandbox is only part of the playground. ;) I&#8217;m leaving it open to everyone so that others may benefit. Whether or not anyone does, that remains to be seen.</p>
+
+<p>Essentially this will be the source to the live <a href="http://nodeplayground.com">Node Playground</a>, but might lag behind slightly if I get lazy about deploying. I&#8217;m also not guaranteeing any service level with this site, it might be horribly broken from time to time. However the index page is static HTML, so in general that should be fine.</p>
+
+<h2 id="mainsite">Main Site</h2>
+
+<p>The site is divided up into a collection of different applications, each of which can do whatever they need to do. I&#8217;m using Apache&#8217;s <a href="http://httpd.apache.org/docs/2.2/mod/mod_proxy.html">ProxyPass</a> to keep everything tidy under one roof. The following is the vhost setup on my local machine.</p>
+
+<pre><code>&lt;VirtualHost *:80&gt;
+  ServerAdmin &lt;your@email.com&gt;
+  ServerName nodeplayground.local
+
+  ProxyPass /chat/ http://localhost:2428/
+  # More applications would go here if necessary.
+  DocumentRoot /path/to/nodeplayground.com/site
+  ErrorLog /path/to/nodeplayground.com/logs/error_log
+  TransferLog /path/to/nodeplayground.com/logs/access_log
+&lt;/VirtualHost&gt; 
+</code></pre>
+
+<p>I&#8217;ll try to keep this example in sync with reality so that you don&#8217;t need to figure out which application runs on which port. Of course, you can muck with the ports if you need to. At the moment each app needs to be run separately and manually.</p>
+
+<p>If you want to change the <code>README.md</code> file, you can run the <code>build</code> script in the root of the project to regenerate the <code>site/index.html</code> from it.</p>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<p>The main site itself has no dependencies unless you want to regenerate the index page from the <code>README.md</code> file. The build script has no node based dependencies other than the <code>fs</code> and <code>child_process</code> modules which come with it. It does currently leverage <a href="http://fletcherpenney.net/multimarkdown/">MultiMarkdown</a> which is use to parse the markdown. I haven&#8217;t had the best luck with some of the node-based markdown parsers, so I went with what I had that worked. You could do something different.</p>
+
+<h3 id="todo">To Do</h3>
+
+<ul>
+<li>Use <code>nodemon</code> or something similar to watch all the applications and restart them when changed.</li>
+<li>Create README content for individual applications and have those be linked into the main site documentation.</li>
+</ul>
+
+<h1 id="seealso">See Also</h1>
+
+<ul>
+<li><a href="http://colin.is">Colin.is</a> &#8212; a personal biography site written in node with content in CouchDB and inline editing.</li>
+</ul>
+
 		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/assets/js/enhance.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
