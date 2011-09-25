@@ -1,0 +1,58 @@
+html,body {
+	margin: 0;
+	padding: 0;
+	font-family: "Myriad Web Pro", Calibri, Tahoma, Arial, sans-serif;
+	text-align: center;
+}
+
+body {
+	border-top: 4px solid #09c;
+}
+
+a {
+	color: #7F4100;
+}
+
+img#masthead {
+	margin: 0 auto 10px;
+}
+
+div#wrapper {
+	text-align: left;
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+
+div#swinger {
+	background: transparent url(/assets/img/node-swing.png) top left no-repeat;
+	width: 100px;
+	height: 97px;
+	position: absolute;
+	top: 0;
+	left: -120px;
+}
+
+div#content {
+	text-align: center;
+}
+
+h1,h2,h3,h4,code,pre,blockquote {
+	margin: 0 auto;
+	width: 800px;
+	text-align: left;
+}
+
+p,ul,ol {
+	width: 800px;
+	text-align: left;
+	margin: 15px auto;
+	font-size: 14pt;
+}
+
+div.highlight {
+	border-top: 1px solid #09c;
+	border-bottom: 1px solid #09c;
+	background-color: #E5F8FF;
+	padding: 5px 0;
+}
