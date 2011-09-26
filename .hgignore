@@ -3,3 +3,4 @@ syntax: glob
 logs
 fabfile.py*
 node_modules/**/*
+locale.json

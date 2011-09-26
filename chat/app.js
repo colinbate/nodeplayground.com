@@ -2,6 +2,11 @@ var express = require('express');
 var app = express.createServer();
 var property = require('property');
 var nowjs = require('now');
+var fs = require('fs');
+
+var locale = JSON.parse(fs.readFileSync(__dirname + '/locale.json', 'utf8'));
+var port = locale.port || 2428;
+var hostname = locale.host || 'localhost';
 
 app.configure(function () {
 	app.set('views', __dirname + '/views');
@@ -21,14 +26,15 @@ app.dynamicHelpers ({
 });
 
 app.get('/', function (req, res) {
+	console.log(req.headers);
 	res.render('chat');
 });
 
-app.listen(2428);
+app.listen(port);
 
-var everyone = nowjs.initialize(app);
+var everyone = nowjs.initialize(app, {protocol: 'http', host: hostname, port: port});
 
-console.log('Chat running on http://localhost:2428');
+console.log('Chat running on http://' + hostname + ':' + port);
 
 var users = [];
 
