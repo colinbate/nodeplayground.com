@@ -37,6 +37,7 @@ The main site itself has no dependencies unless you want to regenerate the index
 
  * Use `nodemon` or something similar to watch all the applications and restart them when changed.
  * Create README content for individual applications and have those be linked into the main site documentation.
+ * Use a package.json to list dependencies for the sub-apps for easier installation.
 
 # See Also
 

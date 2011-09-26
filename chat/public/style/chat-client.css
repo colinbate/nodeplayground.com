@@ -18,6 +18,7 @@ div#participants {
 	top: 0;
 	right: 0;
 	width: 150px;
+	border-left: 1px solid #444;
 	overflow-y: scroll;
 }
 
